@@ -196,3 +196,102 @@ p{
     margin-right: 0.5em;
     font-weight: 700;
 }
+
+
+/* --------------------- */
+/*  Components           */
+/* --------------------- */
+
+.large-button{
+    position: relative;
+    display: grid;
+    padding: 0 2em;
+    border-radius: 50%;
+    aspect-ratio: 1;
+    place-content: center;
+}
+
+.large-button::after{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: inherit;
+    background-color: hsl( var(--clr-white) / 0.15);
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 500ms linear, transform 500ms ease-in-out;
+}
+
+.large-button:hover::after,
+.large-button:focus::after{
+    opacity: 1;
+    transform: scale(1.5);
+}
+
+.primary-navigation{
+    --underline-gap: 2rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.primary-navigation a > span{
+    font-weight: 700;
+    margin-right: 0.5em;
+}
+
+.underline-indicators > *{
+    padding: var(--underline-gap, 1rem) 0;
+    border: 0;
+    cursor: pointer;
+    border-bottom: .2em solid hsl(var(--clr-white) / 0);
+}
+.underline-indicators > *:hover,
+.underline-indicators>*:focus {
+    border-color: hsl(var(--clr-white) / 0.5);
+}
+.underline-indicators> .active,
+.underline-indicators > [aria-selected="true"] {
+    color: hsl( var(--clr-white) );
+    border-bottom: .2em solid hsl(var(--clr-white) / 1);
+}
+
+.tab-list{
+    --gap: 2rem;
+    --underline-gap: 1rem;
+}
+
+.dot-indicators > *{
+    padding: .5em;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 0;
+    background-color: hsl( var(--clr-white) / 0.25);
+}
+.dot-indicators>*:hover,
+.dot-indicators>*:focus {
+    background-color: hsl(var(--clr-white) / 0.5);
+}
+
+.dot-indicators > [aria-selected="true"]{
+    background-color: hsl(var(--clr-white) / 1);
+}
+
+.number-indicators > *{
+    cursor: pointer;
+    border: 2px solid hsl( var(--clr-white) / 0.25);
+    border-radius: 50%;
+    height: 80px;
+    width: 80px;
+}
+
+.number-indicators>*:hover,
+.number-indicators>*:focus {
+    border-color: hsl(var(--clr-white) / 1);
+}
+
+.number-indicators >[aria-selected="true"]{
+    color:hsl( var(--clr-dark) );
+    background-color: hsl( var(--clr-white) );
+}
