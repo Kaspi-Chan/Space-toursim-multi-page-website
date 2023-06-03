@@ -11,7 +11,8 @@
     href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;700&family=Bellefair&family=Barlow:wght@400;700&display=swap"
     rel="stylesheet" />
   <link rel="stylesheet" href="../index.css" />
-  
+  <script src="../index.js" defer></script>
+
   <title>Frontend Mentor | Space tourism website</title>
 </head>
 <body class="home">
@@ -20,14 +21,17 @@
     <div>
       <img src="./assets/shared/logo.svg" alt="Space travel logo" class="logo">
     </div>
-    <!-- <nav>
-      <ul class="primary-navigation flex underline-indicators" style="--gap: 8rem;">
+    <button class="mobile-nav-toggle" aria-controls="primary-navigation">
+      <span class="sr-only" aria-expanded="false">Menu</span>
+    </button>
+    <nav>
+      <ul id="primary-navigation"  data-visible="false" class="primary-navigation flex underline-indicators">
         <li class="active"><a href="#" class="uppercase text-white letter-spacing-2 ff-sans-cond"><span>00</span> Home</a></li>
         <li><a href="#" class="uppercase text-white letter-spacing-2 ff-sans-cond"><span>02</span> Destination</a></li>
         <li><a href="#" class="uppercase text-white letter-spacing-2 ff-sans-cond"><span>03</span> Crew</a></li>
         <li><a href="#" class="uppercase text-white letter-spacing-2 ff-sans-cond"><span>04</span> Technology</a></li>
       </ul>
-    </nav> -->
+    </nav>
   </header>
 
   <div class="grid-container grid-container--home">
