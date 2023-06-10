@@ -95,7 +95,6 @@ a {
 img,
 picture {
   max-width: 100%;
-  display: block;
 }
 
 /* Make form elements easier to work with */
@@ -149,6 +148,10 @@ p {
 
 .flow > *:where(:not(:first-child)) {
   margin-top: var(--flow-space, 1rem);
+}
+
+.flow--space-small{
+  --flow-space: 0.75rem;
 }
 
 .container {
@@ -596,7 +599,7 @@ body {
     "info";
 }
 
-.grid-container--destination > img {
+.grid-container--destination > picture {
   grid-area: image;
   max-width: 60%;
 }
@@ -630,7 +633,7 @@ body {
     "info";
 }
 
-.grid-container--crew > img {
+.grid-container--crew > picture {
   grid-area: image;
   max-width: 60%;
   margin-left: 1rem;
@@ -669,7 +672,7 @@ body {
       "image";
   }
 
-  .grid-container--crew > img {
+  .grid-container--crew > picture {
     align-self: end;
   }
 }
@@ -706,8 +709,8 @@ body {
       ". image info .";
   }
 
-  .grid-container--destination > img,
-  .grid-container--crew > img {
+  .grid-container--destination > picture,
+  .grid-container--crew > picture {
     max-width: 90%;
   }
 
