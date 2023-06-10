@@ -11,7 +11,7 @@
     href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;700&family=Bellefair&family=Barlow:wght@400;700&display=swap"
     rel="stylesheet" />
   <link rel="stylesheet" href="../index.css" />
-  <script src="../index.js" defer></script>
+  <script src="../navigation.js" defer></script>
 
   <title>Frontend Mentor | Space tourism website</title>
 </head>
@@ -20,14 +20,16 @@
 
   <header class="primary-header flex">
     <div>
-      <img src="./assets/shared/logo.svg" alt="Space travel logo" class="logo">
+      <a href="index.html">
+        <img src="./assets/shared/logo.svg" alt="Space travel logo" class="logo">
+      </a>
     </div>
     <button class="mobile-nav-toggle" aria-controls="primary-navigation">
       <span class="sr-only" aria-expanded="false">Menu</span>
     </button>
     <nav>
       <ul id="primary-navigation"  data-visible="false" class="primary-navigation flex underline-indicators">
-        <li class="active"><a href="#" class="uppercase text-white letter-spacing-2 ff-sans-cond"><span aria-hidden="true">00</span> Home</a></li>
+        <li class="active"><a href="index.html" class="uppercase text-white letter-spacing-2 ff-sans-cond"><span aria-hidden="true">00</span> Home</a></li>
         <li><a href="destination.html" class="uppercase text-white letter-spacing-2 ff-sans-cond"><span aria-hidden="true">02</span> Destination</a></li>
         <li><a href="crew.html" class="uppercase text-white letter-spacing-2 ff-sans-cond"><span aria-hidden="true">03</span> Crew</a></li>
         <li><a href="technology.html" class="uppercase text-white letter-spacing-2 ff-sans-cond"><span aria-hidden="true">04</span> Technology</a></li>
@@ -45,7 +47,7 @@
         because we’ll give you a truly out of this world experience!</p>
     </div>
     <div>
-      <a href="#" class="large-button bg-white text-dark ff-serif uppercase">Explore</a>
+      <a href="destination.html" class="large-button bg-white text-dark ff-serif uppercase">Explore</a>
     </div>
   </main>
 

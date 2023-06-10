@@ -17,7 +17,8 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="../index.css" />
-    <script src="../index.js" defer></script>
+    <script src="../navigation.js" defer></script>
+    <script src="../tab.js" defer></script>
 
     <title>Frontend Mentor | Space tourism website</title>
   </head>
@@ -28,11 +29,9 @@
 
     <header class="primary-header flex">
       <div>
-        <img
-          src="./assets/shared/logo.svg"
-          alt="Space travel logo"
-          class="logo"
-        />
+        <a href="index.html">
+          <img src="./assets/shared/logo.svg" alt="Space travel logo" class="logo">
+        </a>
       </div>
       <button class="mobile-nav-toggle" aria-controls="primary-navigation">
         <span class="sr-only" aria-expanded="false">Menu</span>
@@ -43,9 +42,9 @@
           data-visible="false"
           class="primary-navigation flex underline-indicators"
         >
-          <li class="active">
+          <li>
             <a
-              href="#"
+              href="index.html"
               class="uppercase text-white letter-spacing-2 ff-sans-cond"
               ><span aria-hidden="true">00</span> Home</a
             >
@@ -57,7 +56,7 @@
               ><span aria-hidden="true">02</span> Destination</a
             >
           </li>
-          <li>
+          <li class="active">
             <a
               href="crew.html"
               class="uppercase text-white letter-spacing-2 ff-sans-cond"
@@ -81,7 +80,7 @@
       </h1>
 
       <!-- COMMANDER -->
-      <article class="crew-details flow">
+      <article class="crew-details flow" id="commander-tab" tabindex="0" role="tabpanel">
         <header class="flow flow--space-small">
           <h2 class="fs-600 serif uppercase">Commander</h2>
           <p class="text-white fs-700 ff-serif uppercase">Douglas Hurley</p>
@@ -94,7 +93,7 @@
       </article>
 
       <!-- MISSION SPECIALIST -->
-      <article hidden class="crew-details flow">
+      <article hidden class="crew-details flow" id="mission-tab" tabindex="-1" role="tabpanel">
         <header class="flow flow--space-small">
           <h2 class="fs-600 serif uppercase">Mission Specialist</h2>
           <p class="text-white fs-700 ff-serif uppercase">Mark Shuttleworth</p>
@@ -107,7 +106,7 @@
       </article>
 
       <!-- Pilot -->
-      <article hidden class="crew-details flow">
+      <article hidden class="crew-details flow" id="pilot-tab" tabindex="-1" role="tabpanel">
         <header class="flow flow--space-small">
           <h2 class="fs-600 serif uppercase">Pilot</h2>
           <p class="text-white fs-700 ff-serif uppercase">Victor Glover</p>
@@ -121,7 +120,7 @@
       </article>
 
       <!-- FLIGHT ENGINEER -->
-      <article hidden class="crew-details flow">
+      <article hidden class="crew-details flow" id="flight-tab" tabindex="-1" role="tabpanel">
         <header class="flow flow--space-small">
           <h2 class="fs-600 serif uppercase">Flight Engineer</h2>
           <p class="text-white fs-700 ff-serif uppercase">Anousheh Ansari</p>
@@ -133,34 +132,34 @@
         </p>
       </article>
 
-      <picture>
+      <picture id="commander-image">
         <source srcset="../starter-code/assets/crew/image-douglas-hurley.webp">
         <img src="../starter-code/assets/crew/image-douglas-hurley.png" alt="Douglas Hurley" />
       </picture>
-      <picture hidden>
+      <picture hidden id="mission-image">
         <source srcset="../starter-code/assets/crew/image-mark-shuttleworth.webp">
         <img src="../starter-code/assets/crew/image-mark-shuttleworth.png" alt="Mark Shuttleworth" />
       </picture>
-      <picture hidden>
+      <picture hidden id="pilot-image">
         <source srcset="../starter-code/assets/crew/image-victor-glover.webp">
         <img src="../starter-code/assets/crew/image-victor-glover.png" alt="Victor Glover" />
       </picture>
-      <picture hidden>
+      <picture hidden id="flight-image">
         <source srcset="../starter-code/assets/crew/image-anousheh-ansari.webp">
         <img src="../starter-code/assets/crew/image-anousheh-ansari.png" alt="Anousheh Ansari" />
       </picture>
 
-      <div class="dot-indicators flex">
-        <button aria-selected="true">
+      <div class="dot-indicators flex" role="tablist" aria-label="crew members list">
+        <button aria-selected="true" aria-controls="commander-tab" data-image="commander-image" role="tab" tabindex="-0">
           <span class="sr-only">The commander</span>
         </button>
-        <button aria-selected="false">
+        <button aria-selected="false" aria-controls="mission-tab" data-image="mission-image" role="tab" tabindex="-1">
           <span class="sr-only">The mission specialist</span>
         </button>
-        <button aria-selected="false">
+        <button aria-selected="false" aria-controls="pilot-tab" data-image="pilot-image" role="tab" tabindex="-1">
           <span class="sr-only">The Pilot</span>
         </button>
-        <button aria-selected="false">
+        <button aria-selected="false" aria-controls="flight-tab" data-image="flight-image" role="tab" tabindex="-1">
           <span class="sr-only">The crew engineer</span>
         </button>
       </div>
