@@ -1,32 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
-  
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;700&family=Bellefair&family=Barlow:wght@400;700&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="../index.css" />
+  <script src="../navigation.js" defer></script>
+  <script src="../tab.js" defer></script>
+
   <title>Frontend Mentor | Space tourism website</title>
 </head>
-<body>
 
-  00 Home
-  01 Destination
-  02 Crew
-  03 Technology
+<body class="crew">
+  <a class="skip-to-content text-dark bg-white" href="#main">Skip to content</a>
 
-  03 Space launch 101
+  <header class="primary-header flex">
+    <div>
+      <a href="index.html">
+        <img src="./assets/shared/logo.svg" alt="Space travel logo" class="logo">
+      </a>
+    </div>
+    <button class="mobile-nav-toggle" aria-controls="primary-navigation">
+      <span class="sr-only" aria-expanded="false">Menu</span>
+    </button>
+    <nav>
+      <ul id="primary-navigation" data-visible="false" class="primary-navigation flex underline-indicators">
+        <li>
+          <a href="index.html" class="uppercase text-white letter-spacing-2 ff-sans-cond"><span
+              aria-hidden="true">00</span> Home</a>
+        </li>
+        <li>
+          <a href="destination.html" class="uppercase text-white letter-spacing-2 ff-sans-cond"><span
+              aria-hidden="true">02</span> Destination</a>
+        </li>
+        <li>
+          <a href="crew.html" class="uppercase text-white letter-spacing-2 ff-sans-cond"><span
+              aria-hidden="true">03</span> Crew</a>
+        </li>
+        <li class="active">
+          <a href="technology.html" class="uppercase text-white letter-spacing-2 ff-sans-cond"><span
+              aria-hidden="true">04</span> Technology</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
 
-  1
-  2
-  3
+  <main id="main" class="grid-container grid-container--technology flow">
+    <h1 class="numbered-title fs-500 ff-sans-cond">
+      <span aria-hidden="true">03</span>Space launch 101
+    </h1>
 
-  The terminology...
-  Spaceport
+    <div class="number-indicators grid">
+      <button aria-selected="true" class="ff-sans-cond fs-600 bg-dark text-white">1</button>
+      <button aria-selected="false" class="ff-sans-cond fs-600 bg-dark text-white">2</button>
+      <button aria-selected="false" class="ff-sans-cond fs-600 bg-dark text-white">3</button>
+    </div>
 
-  A spaceport or cosmodrome is a site for launching (or receiving) spacecraft, 
-  by analogy to the seaport for ships or airport for aircraft. Based in the 
-  famous Cape Canaveral, our spaceport is ideally situated to take advantage 
-  of the Earth’s rotation for launch.
+    <article class="technology-details flow">
+      <header class="flow flow--space-small">
+        <h2 class="fs-400 ff-sans-cond uppercase letter-spacing-3 text-light">The terminology...</h2>
+        <p class="text-white fs-700 ff-serif uppercase">Launch vehicle</p>
+      </header>
+      <p class="text-light fs-400">
+        A spaceport or cosmodrome is a site for launching (or receiving) spacecraft,
+        by analogy to the seaport for ships or airport for aircraft. Based in the
+        famous Cape Canaveral, our spaceport is ideally situated to take advantage
+        of the Earth’s rotation for launch.
+      </p>
+    </article>
+
+    <img src="../starter-code/assets/technology/image-launch-vehicle-landscape.jpg" alt="Picture of a rocket launch">
+  </main>
 </body>
 </html>

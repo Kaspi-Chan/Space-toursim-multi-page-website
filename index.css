@@ -153,6 +153,9 @@ p {
 .flow--space-small{
   --flow-space: 0.75rem;
 }
+.flow--space-normal{
+  --flow-space: 1rem;
+}
 
 .container {
   padding-inline: 2em;
@@ -495,10 +498,11 @@ p {
 
 .number-indicators > * {
   cursor: pointer;
-  border: 2px solid hsl(var(--clr-white) / 0.25);
+  border: 1px solid hsl(var(--clr-white) / 0.25);
+  background-color: hsl(var(--clr-dark) / 0.1);
   border-radius: 50%;
-  height: 80px;
-  width: 80px;
+  height: 55px;
+  width: 55px;
 }
 
 .number-indicators > *:hover,
@@ -655,6 +659,33 @@ body {
   opacity: 0.5;
 }
 
+/* technology layout */
+.grid-container--technology{
+  overflow-x: hidden;
+  grid-template-areas: 
+      'title'
+      'image'
+      'number-indicators'
+      'info';
+}
+
+.grid-container--technology>img{
+  grid-area: image;
+  min-width: 110%;
+  min-height: 100%;
+  align-self: end;
+}
+
+.grid-container--technology>.number-indicators {
+  grid-area: number-indicators;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.grid-container--technology>.technology-details {
+  grid-area: info;
+}
+
+
 @media (min-width: 35rem) {
   .numbered-title {
     justify-self: start;
@@ -678,6 +709,11 @@ body {
   .grid-container--crew > picture {
     align-self: end;
     border-bottom: none;
+  }
+
+  .number-indicators,
+  .technology-details{
+    margin-top: 2.5rem;
   }
 }
 
@@ -741,4 +777,10 @@ body {
     grid-column: span 2;
   }
 
+    .grid-container--technology {
+      grid-template-areas:
+        '. title title .'
+        '. number-indicators info image'
+        '. number-indicators info image';
+    }
 }
