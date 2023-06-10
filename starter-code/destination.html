@@ -17,7 +17,8 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="../index.css" />
-    <script src="../index.js" defer></script>
+    <script src="../navigation.js" defer></script>
+    <script src="../tab.js" defer></script>
 
     <title>Frontend Mentor | Space tourism website</title>
   </head>
@@ -80,51 +81,67 @@
         <span aria-hidden="true">01</span> Pick your destination
       </h1>
 
-      <picture>
+      <picture id="moon-image">
         <source srcset="../starter-code/assets/destination/image-moon.webp" type="image/webp">
         <img src="../starter-code/assets/destination/image-moon.png" alt="the moon" />
       </picture>
-      <picture hidden>
+      <picture hidden id="mars-image">
         <source srcset="../starter-code/assets/destination/image-mars.webp" type="image/webp">
         <img src="../starter-code/assets/destination/image-mars.png" alt="the planet mars" />
       </picture>
-      <picture hidden>
+      <picture hidden id="europa-image">
         <source srcset="../starter-code/assets/destination/image-europa.webp" type="image/webp">
         <img src="../starter-code/assets/destination/image-europa.png" alt="the moon europa" />
       </picture>
-      <picture hidden>
+      <picture hidden id="titan-image">
         <source srcset="../starter-code/assets/destination/image-titan.webp" type="image/webp">
         <img src="../starter-code/assets/destination/image-titan.png" alt="the moon titan" />
       </picture>
 
-      <div class="tab-list flex underline-indicators ff-serif">
+      <div class="tab-list flex underline-indicators ff-serif" role="tablist" aria-label="destination list">
         <button
           aria-selected="true"
-          class="active text-light letter-spacing-2 uppercase ff-sans-cond"
+          role="tab"
+          aria-controls="moon-tab"
+          class="text-light letter-spacing-2 uppercase ff-sans-cond"
+          tabindex="0"
+          data-image="moon-image"
         >
           Moon
         </button>
         <button
           aria-selected="false"
+          role="tab"
+          aria-controls="mars-tab"
           class="text-light letter-spacing-2 uppercase ff-sans-cond"
+          tabindex="-1"
+          data-image="mars-image"
         >
           Mars
         </button>
         <button
           aria-selected="false"
+          role="tab"
+          aria-controls="europa-tab"
           class="text-light letter-spacing-2 uppercase ff-sans-cond"
+          tabindex="-1"
+          data-image="europa-image"
         >
           Europa
         </button>
         <button
           aria-selected="false"
+          role="tab"
+          aria-controls="titan-tab"
           class="text-light letter-spacing-2 uppercase ff-sans-cond"
+          tabindex="-1"
+          data-image="titan-image"
         >
           Titan
         </button>
       </div>
 
-      <article class="destination-info flow">
+      <article class="destination-info flow" id="moon-tab" tabindex="0" role="tabpanel">
         <h2 class="text-white fs-800 ff-serif uppercase">Moon</h2>
 
         <p class="text-light fs-400">
@@ -155,7 +172,7 @@
       </article>
 
       <!-- MARS -->
-      <article hidden class="destination-info flow">
+      <article hidden class="destination-info flow" id="mars-tab" tabindex="-1" role="tabpanel">
         <h2 class="text-white fs-800 ff-serif uppercase">Mars</h2>
       
         <p class="text-light fs-400">
@@ -181,7 +198,7 @@
       </article>
 
       <!-- EUROPA -->
-      <article hidden class="destination-info flow">
+      <article hidden class="destination-info flow" id="europa-tab" tabindex="-1" role="tabpanel">
         <h2 class="text-white fs-800 ff-serif uppercase">Europa</h2>
       
         <p class="text-light fs-400">
@@ -208,7 +225,7 @@
       </article>
 
       <!-- TITAN -->
-      <article hidden class="destination-info flow">
+      <article hidden class="destination-info flow" id="titan-tab" tabindex="-1" role="tabpanel">
         <h2 class="text-white fs-800 ff-serif uppercase">Titan</h2>
       
         <p class="text-light fs-400">
