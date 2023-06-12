@@ -150,10 +150,10 @@ p {
   margin-top: var(--flow-space, 1rem);
 }
 
-.flow--space-small{
+.flow--space-small {
   --flow-space: 0.75rem;
 }
-.flow--space-normal{
+.flow--space-normal {
   --flow-space: 1rem;
 }
 
@@ -575,6 +575,23 @@ body {
   }
 }
 
+.technology {
+  background-image: url(./starter-code/assets/technology/background-technology-mobile.jpg);
+}
+
+@media (min-width: 35em) {
+  .technology {
+    background-position: center center;
+    background-image: url(./starter-code/assets/technology/background-technology-tablet.jpg);
+  }
+}
+
+@media (min-width: 45em) {
+  .technology {
+    background-image: url(./starter-code/assets/technology/background-technology-desktop.jpg);
+  }
+}
+
 /* --------------------------- */
 /*  Layout                     */
 /* --------------------------- */
@@ -660,31 +677,30 @@ body {
 }
 
 /* technology layout */
-.grid-container--technology{
+.grid-container--technology {
   overflow-x: hidden;
-  grid-template-areas: 
-      'title'
-      'image'
-      'number-indicators'
-      'info';
+  grid-template-areas:
+    "title"
+    "image"
+    "info";
 }
 
-.grid-container--technology>img{
+.grid-container--technology > img {
   grid-area: image;
   min-width: 110%;
   min-height: 100%;
   align-self: end;
 }
 
-.grid-container--technology>.number-indicators {
+.grid-container--technology .number-indicators {
+  display: inline-grid;
   grid-area: number-indicators;
   grid-template-columns: repeat(3, 1fr);
 }
 
-.grid-container--technology>.technology-details {
+.grid-container--technology > .element-group {
   grid-area: info;
 }
-
 
 @media (min-width: 35rem) {
   .numbered-title {
@@ -712,8 +728,8 @@ body {
   }
 
   .number-indicators,
-  .technology-details{
-    margin-top: 2.5rem;
+  .technology-details {
+    margin-top: 2rem;
   }
 }
 
@@ -750,7 +766,7 @@ body {
   }
 
   .grid-container--destination > picture,
-  .grid-container--crew>picture{
+  .grid-container--crew > picture {
     max-width: 90%;
   }
 
@@ -760,7 +776,10 @@ body {
   }
 
   .grid-container--crew {
-    grid-template-columns: minmax(2em, 1fr) minmax(0, 37rem) minmax(0, 23rem) minmax(2em, 1fr);
+    grid-template-columns: minmax(2em, 1fr) minmax(0, 37rem) minmax(0, 23rem) minmax(
+        2em,
+        1fr
+      );
     justify-content: start;
     grid-template-areas:
       ". title title ."
@@ -773,14 +792,51 @@ body {
     justify-self: start;
   }
 
-  .grid-container--crew > picture{
+  .grid-container--crew > picture {
     grid-column: span 2;
   }
 
-    .grid-container--technology {
-      grid-template-areas:
-        '. title title .'
-        '. number-indicators info image'
-        '. number-indicators info image';
-    }
+  .technology > #main {
+    padding-right: 0;
+  }
+
+  .grid-container--technology {
+    grid-template-columns: minmax(2em, 1fr) minmax(0, 42rem) minmax(0, 33rem) minmax(
+        2em,
+        1fr
+      );
+    justify-content: start;
+    grid-template-areas:
+      ". title title ."
+      ". info image ."
+      ". info image .";
+  }
+
+  .grid-container--technology .number-indicators {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2rem;
+  }
+  .number-indicators > * {
+    width: 80px;
+    height: 80px;
+  }
+
+  .element-group {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+    width: 100%;
+    align-self: center;
+  }
+
+  .grid-container--technology > img {
+    content: url(./starter-code/assets/technology/image-launch-vehicle-portrait.jpg);
+    grid-column: span 2;
+    margin-top: 0;
+    min-width: 80%;
+    min-height: auto;
+    justify-self: end;
+  }
 }
