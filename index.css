@@ -685,21 +685,21 @@ body {
     "info";
 }
 
-.grid-container--technology > img {
+.grid-container--technology > picture {
   grid-area: image;
   min-width: 110%;
   min-height: 100%;
-  align-self: end;
+  align-self: center;
 }
 
 .grid-container--technology .number-indicators {
   display: inline-grid;
-  grid-area: number-indicators;
   grid-template-columns: repeat(3, 1fr);
 }
 
 .grid-container--technology > .element-group {
   grid-area: info;
+  align-self: start;
 }
 
 @media (min-width: 35rem) {
@@ -831,7 +831,7 @@ body {
     align-self: center;
   }
 
-  .grid-container--technology > img {
+  .grid-container--technology > picture {
     grid-column: span 2;
     margin-top: 0;
     min-width: 80%;
@@ -850,5 +850,20 @@ body {
 
   #space-port-image {
     content: url(./starter-code/assets/technology/image-spaceport-portrait.jpg);
+  }
+}
+
+@media (min-width: 1660px){
+  .grid-container--technology > picture{
+    min-width: 70%;
+  }
+}
+
+/* Tall smartphones */
+@media (min-height: 900px) and (max-width: 35rem) {
+/* Different technology images */
+  .grid-container--technology .number-indicators{
+    position: relative;
+    top: -2.5rem;
   }
 }

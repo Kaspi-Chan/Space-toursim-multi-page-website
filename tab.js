@@ -38,6 +38,8 @@ function changeTabPanel(e){
     const targetPanel = targetTab.getAttribute('aria-controls');
     const targetImage = targetTab.getAttribute('data-image');
 
+    console.log(targetImage);
+
     const tabContainer = targetTab.parentNode;
     const mainContainer = tabContainer.parentNode;
 
@@ -52,16 +54,19 @@ function changeTabPanel(e){
 
     hideContent(mainContainer, 'picture');
     showContent(mainContainer, [`#${targetImage}`]);
-
-    hideContent(mainContainer, 'picture');
-    showContent(mainContainer, [`#${targetImage}`]);
 }
 
 function hideContent(parent, content){
+    if(parent.classList.contains('element-group')){
+        parent = parent.parentNode;
+    }
     parent
         .querySelectorAll(content)
         .forEach((panel) => panel.setAttribute('hidden', true));
 }
 function showContent(parent, content){
+    if(parent.classList.contains('element-group')){
+        parent = parent.parentNode;
+    }
     parent.querySelector(content).removeAttribute('hidden');
 }
