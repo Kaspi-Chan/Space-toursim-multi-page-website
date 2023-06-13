@@ -52,6 +52,9 @@ function changeTabPanel(e){
 
     hideContent(mainContainer, 'picture');
     showContent(mainContainer, [`#${targetImage}`]);
+
+    hideContent(mainContainer, 'picture');
+    showContent(mainContainer, [`#${targetImage}`]);
 }
 
 function hideContent(parent, content){

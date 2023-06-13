@@ -85,28 +85,41 @@
       </h1>
 
       <div class="element-group flow">
-        <div class="number-indicators grid">
+        <div class="number-indicators grid" role="tablist" aria-label="Technology list">
           <button
             aria-selected="true"
             class="ff-sans-cond fs-600 bg-dark text-white"
+            aria-controls="launch-vehicle-tab" 
+            data-image="launch-vehicle-image" 
+            role="tab" 
+            tabindex="0"
           >
             1
           </button>
           <button
             aria-selected="false"
             class="ff-sans-cond fs-600 bg-dark text-white"
+            aria-controls="space-capsule-tab" 
+            data-image="space-capsule-image" 
+            role="tab" 
+            tabindex="0"
           >
             2
           </button>
           <button
             aria-selected="false"
             class="ff-sans-cond fs-600 bg-dark text-white"
+            aria-controls="space-port-tab" 
+            data-image="space-port-image" 
+            role="tab" 
+            tabindex="0"
           >
             3
           </button>
         </div>
 
-        <article class="technology-details flow">
+        <!-- Space Launch -->
+        <article class="technology-details flow" id="launch-vehicle-tab" tabindex="0" role="tabpanel">
           <header class="flow flow--space-small">
             <h2
               class="fs-400 ff-sans-cond uppercase letter-spacing-3 text-light"
@@ -121,6 +134,37 @@
             Earth orbit or beyond. Our WEB-X carrier rocket is the most powerful
             in operation. Standing 150 metres tall, it's quite an awe-inspiring
             sight on the launch pad!
+          </p>
+        </article>
+
+        <!-- Space Capsule -->
+        <article hidden class="technology-details flow" id="space-capsule-tab" tabindex="-1" role="tabpanel">
+          <header class="flow flow--space-small">
+            <h2 class="fs-400 ff-sans-cond uppercase letter-spacing-3 text-light">
+              The terminology...
+            </h2>
+            <p class="text-white fs-700 ff-serif uppercase">Space capsule</p>
+          </header>
+          <p class="text-light fs-400">
+            A space capsule is an often-crewed spacecraft that uses a blunt-body reentry
+            capsule to reenter the Earth's atmosphere without wings. Our capsule is where
+            you'll spend your time during the flight. It includes a space gym, cinema,
+            and plenty of other activities to keep you entertained.
+          </p>
+        </article>
+
+        <!-- Space Port -->
+        <article hidden class="technology-details flow" id="space-port-tab" tabindex="-1" role="tabpanel">
+          <header class="flow flow--space-small">
+            <h2 class="fs-400 ff-sans-cond uppercase letter-spacing-3 text-light">
+              The terminology...
+            </h2>
+            <p class="text-white fs-700 ff-serif uppercase">Spaceport</p>
+          </header>
+          <p class="text-light fs-400">
+            A spaceport or cosmodrome is a site for launching (or receiving) spacecraft, by analogy to the seaport for ships or
+            airport for aircraft. Based in the famous Cape Canaveral, our spaceport is ideally situated to take advantage of the
+            Earth’s rotation for launch.
           </p>
         </article>
       </div>
