@@ -832,12 +832,23 @@ body {
   }
 
   .grid-container--technology > img {
-    /* the content will be selected with ID when i put the different article elements */
-    content: url(./starter-code/assets/technology/image-launch-vehicle-portrait.jpg);
     grid-column: span 2;
     margin-top: 0;
     min-width: 80%;
     min-height: auto;
     justify-self: end;
+  }
+  
+  /* Different technology images */
+  #launch-vehicle-image{
+    content: url(./starter-code/assets/technology/image-launch-vehicle-portrait.jpg);
+  }
+
+  #space-capsule-image{
+    content: url(./starter-code/assets/technology/image-space-capsule-portrait.jpg);
+  }
+
+  #space-port-image {
+    content: url(./starter-code/assets/technology/image-spaceport-portrait.jpg);
   }
 }
