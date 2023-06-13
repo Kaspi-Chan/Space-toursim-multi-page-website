@@ -389,7 +389,7 @@ p {
     border: none;
     background: transparent;
     z-index: 2000;
-    background-image: url(./starter-code/assets/shared/icon-hamburger.svg);
+    background-image: url(assets/shared/icon-hamburger.svg);
     background-repeat: no-repeat;
     background-position: center;
     width: 1.5rem;
@@ -398,7 +398,7 @@ p {
   }
 
   .mobile-nav-toggle[aria-expanded="true"] {
-    background-image: url(./starter-code/assets/shared/icon-close.svg);
+    background-image: url(assets/shared/icon-close.svg);
   }
 
   .mobile-nav-toggle:focus-visible {
@@ -525,70 +525,70 @@ body {
 }
 
 .home {
-  background-image: url(./starter-code/assets/home/background-home-mobile.jpg);
+  background-image: url(assets/home/background-home-mobile.jpg);
 }
 
 @media (min-width: 35em) {
   .home {
     background-position: center center;
-    background-image: url(./starter-code/assets/home/background-home-tablet.jpg);
+    background-image: url(assets/home/background-home-tablet.jpg);
   }
 }
 
 @media (min-width: 45em) {
   .home {
-    background-image: url(./starter-code/assets/home/background-home-desktop.jpg);
+    background-image: url(assets/home/background-home-desktop.jpg);
   }
 }
 
 .destination {
-  background-image: url(./starter-code/assets/destination/background-destination-mobile.jpg);
+  background-image: url(assets/destination/background-destination-mobile.jpg);
 }
 
 @media (min-width: 35em) {
   .destination {
     background-position: center center;
-    background-image: url(./starter-code/assets/destination/background-destination-tablet.jpg);
+    background-image: url(assets/destination/background-destination-tablet.jpg);
   }
 }
 
 @media (min-width: 45em) {
   .destination {
-    background-image: url(./starter-code/assets/destination/background-destination-desktop.jpg);
+    background-image: url(assets/destination/background-destination-desktop.jpg);
   }
 }
 
 .crew {
-  background-image: url(./starter-code/assets/crew/background-crew-mobile.jpg);
+  background-image: url(assets/crew/background-crew-mobile.jpg);
 }
 
 @media (min-width: 35em) {
   .crew {
     background-position: center center;
-    background-image: url(./starter-code/assets/crew/background-crew-tablet.jpg);
+    background-image: url(assets/crew/background-crew-tablet.jpg);
   }
 }
 
 @media (min-width: 45em) {
   .crew {
-    background-image: url(./starter-code/assets/crew/background-crew-desktop.jpg);
+    background-image: url(assets/crew/background-crew-desktop.jpg);
   }
 }
 
 .technology {
-  background-image: url(./starter-code/assets/technology/background-technology-mobile.jpg);
+  background-image: url(assets/technology/background-technology-mobile.jpg);
 }
 
 @media (min-width: 35em) {
   .technology {
     background-position: center center;
-    background-image: url(./starter-code/assets/technology/background-technology-tablet.jpg);
+    background-image: url(assets/technology/background-technology-tablet.jpg);
   }
 }
 
 @media (min-width: 45em) {
   .technology {
-    background-image: url(./starter-code/assets/technology/background-technology-desktop.jpg);
+    background-image: url(assets/technology/background-technology-desktop.jpg);
   }
 }
 
@@ -841,15 +841,15 @@ body {
   
   /* Different technology images */
   #launch-vehicle-image{
-    content: url(./starter-code/assets/technology/image-launch-vehicle-portrait.jpg);
+    content: url(assets/technology/image-launch-vehicle-portrait.jpg);
   }
 
   #space-capsule-image{
-    content: url(./starter-code/assets/technology/image-space-capsule-portrait.jpg);
+    content: url(assets/technology/image-space-capsule-portrait.jpg);
   }
 
   #space-port-image {
-    content: url(./starter-code/assets/technology/image-spaceport-portrait.jpg);
+    content: url(assets/technology/image-spaceport-portrait.jpg);
   }
 }
 
