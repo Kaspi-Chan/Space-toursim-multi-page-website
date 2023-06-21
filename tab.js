@@ -7,38 +7,36 @@ tabs.forEach((tab) => {
 });
 
 let tabFocus = 0;
-function changeFocus(e){
+function changeFocus(e) {
     const keydownLeft = 37;
     const keydownRight = 39;
 
     // change the tabindex of the current tab to -1
-    if(e.keyCode === keydownLeft || e.keyCode === keydownRight){
+    if (e.keyCode === keydownLeft || e.keyCode === keydownRight) {
         tabs[tabFocus].setAttribute("tabindex", -1);
 
-        if(e.keyCode === keydownRight){
+        if (e.keyCode === keydownRight) {
             tabFocus++;
-            if(tabFocus >= tabs.length){
+            if (tabFocus >= tabs.length) {
                 tabFocus = 0;
             }
         }
-        else if(e.keyCode === keydownLeft){
+        else if (e.keyCode === keydownLeft) {
             tabFocus--;
-            if(tabFocus < 0){
+            if (tabFocus < 0) {
                 tabFocus = tabs.length - 1;
             }
         }
-        
+
         tabs[tabFocus].setAttribute("tabindex", 0);
         tabs[tabFocus].focus();
-        }
+    }
 }
 
-function changeTabPanel(e){
+function changeTabPanel(e) {
     const targetTab = e.target;
     const targetPanel = targetTab.getAttribute('aria-controls');
     const targetImage = targetTab.getAttribute('data-image');
-
-    console.log(targetImage);
 
     const tabContainer = targetTab.parentNode;
     const mainContainer = tabContainer.parentNode;
@@ -56,16 +54,16 @@ function changeTabPanel(e){
     showContent(mainContainer, [`#${targetImage}`]);
 }
 
-function hideContent(parent, content){
-    if(parent.classList.contains('element-group')){
+function hideContent(parent, content) {
+    if (parent.classList.contains('element-group')) {
         parent = parent.parentNode;
     }
     parent
         .querySelectorAll(content)
         .forEach((panel) => panel.setAttribute('hidden', true));
 }
-function showContent(parent, content){
-    if(parent.classList.contains('element-group')){
+function showContent(parent, content) {
+    if (parent.classList.contains('element-group')) {
         parent = parent.parentNode;
     }
     parent.querySelector(content).removeAttribute('hidden');
